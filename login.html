@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>customer_login</title>
+<style>
+    body{
+margin:0;
+padding:0;
+font-family: sans-serif;
+<!--background:url(realistic-background-with-modern-washing-machine-empty-laundry-room_8829-1841.jpg) no-repeat;-->
+<!--background-size:cover;-->
+}
+.login-box{
+width:280px;
+<!--position:absolute;-->
+<!--top:50%;-->
+<!--left:50%;-->
+transform:translate(-50%,-50%);
+}
+.login-box h1{
+font-size:40px;
+border-bottom:6px solid blue;
+margin-bottom:50px;
+padding:13px 0;
+
+}
+.textbox{
+width=100%;
+overflow:hidden;
+font-size:20px;
+padding:8px 0;
+margin:8px 0;
+border-bottom:1px solid blue;
+}
+</style>
+</head>
+<body>
+
+<div class="login-box">
+<h1>LOGIN</h1>
+</div>
+<form method="post" action="login">{% csrf_token %}
+
+<div class="textbox">
+<input type="text" placeholder="Username" name="FirstName" value="">
+</div>
+<div class="textbox">
+<input type="password" placeholder="Password" name="Password" value="">
+</div>
+
+<input class="btn" type="button" name="" value="Sign in">
+<div>
+    Need An Account? <a href="{% url 'customer-register' %}">Sign Up</a>
+</div>
+</form>
+</body>
+</html>
